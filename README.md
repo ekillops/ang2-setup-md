@@ -2,7 +2,7 @@
 
 1. Create `index.html` ->
 
-    `<html>
+     <html>
       <head>
         <title><!--YOUR PROJECT NAME--></title>
         <meta charset="UTF-8">
@@ -28,12 +28,12 @@
         <app-root>Loading...</app-root>
       </body>
     </html>
-    `
+    
 
 
 2. Create `package.json` ->
 
-    `
+    
     {
       "name": "project-name",
       "version": "1.0.0",
@@ -82,7 +82,7 @@
         "typings":"^1.3.2"
       }
     }
-    `
+    
 
 
 3. Install bower if needed and initialize bower ->
@@ -94,7 +94,7 @@
 
 4. Create a `.gitignore` file with the following contents ->
 
-    `
+    
     node_modules/
     npm-debug.log
     bower_components/
@@ -103,21 +103,21 @@
     .DS_Store
     build/
     typings/
-    `
+    
 
 
 5. Create a resources folder with the following subdirectories ->
 
-    `
+    
     ./resources/images
     ./resources/styles
     ./resources/js
-    `
+    
 
 
 6. Create a Typescript configuration file called `tsconfig.json` with the following contents ->
 
-    `
+    
     {
       "compilerOptions": {
         "target": "es5",
@@ -130,25 +130,25 @@
         "noImplicitAny": false
       }
     }
-    `
+    
 
 
 7. Create a file called `typings.json` with the folling contents ->
 
-`
-{
-  "globalDependencies": {
-    "core-js": "registry:dt/core-js#0.0.0+20160725163759",
-    "jasmine": "registry:dt/jasmine#2.2.0+20160621224255",
-    "node": "registry:dt/node#6.0.0+20160831021119"
-  }
-}
-`
+
+    {
+      "globalDependencies": {
+        "core-js": "registry:dt/core-js#0.0.0+20160725163759",
+        "jasmine": "registry:dt/jasmine#2.2.0+20160621224255",
+        "node": "registry:dt/node#6.0.0+20160831021119"
+      }
+    }
+
 
 
 8. Create our `gulpfile.js` ->
 
-`
+
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
@@ -258,12 +258,12 @@ gulp.task('sassBuild', function() {
       gulp.start('bower');
       gulp.start('sassBuild');
     });
-    `
+    
 
 
 9. Create app folder and root component called `app.component.ts` with the following contents->
 
-    `
+    
     import { Component } from '@angular/core';
 
     @Component({
@@ -277,12 +277,12 @@ gulp.task('sassBuild', function() {
 
     }
 
-`
+
 
 
 10. Create root module in app folder called `app.module.ts` with the following contents ->
 
-    `
+    
     import { NgModule }      from '@angular/core';
     import { BrowserModule } from '@angular/platform-browser';
     import { AppComponent }   from './app.component';
@@ -294,24 +294,24 @@ gulp.task('sassBuild', function() {
     })
 
     export class AppModule { }
-    `
+    
 
 
 11. Create entry point file in app folder, `main.ts` ->
 
-    `
+    
     import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
     import { AppModule } from './app.module';
 
     const platform = platformBrowserDynamic();
 
     platform.bootstrapModule(AppModule);
-    `
+    
 
 
 12. Create `systemjs.config.js` in main directory ->
 
-    `
+    
     /**
      * System configuration for Angular 2 samples
      * Adjust as necessary for your application needs.
@@ -355,4 +355,4 @@ gulp.task('sassBuild', function() {
         }
       });
     })(this);
-    `
+    
